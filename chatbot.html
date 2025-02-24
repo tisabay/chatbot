@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Chatbot</title>
+    <style>
+        /* Chatbot Icon */
+        #chatbot-icon {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #004461;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1001;
+            color: white;
+            font-size: 24px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        #chatbot-icon:hover {
+            background-color: #dea558;
+            transform: translateY(-50%) scale(1.05);
+        }
+
+        /* Chatbot Popup/Modal */
+        #chatbot-popup {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 80px;
+            width: 350px;
+            height: 500px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            display: none;
+            overflow: hidden;
+            z-index: 1000;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        #chatbot-popup iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            #chatbot-popup {
+                width: 80%;
+                right: 10px;
+                left: 10px;
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #chatbot-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+                right: 15px;
+            }
+
+            #chatbot-popup {
+                width: 90%;
+                left: 5%;
+                right: 5%;
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="chatbot-icon" aria-label="Open Chatbot">
+        <i class="fas fa-comment-dots"></i>
+    </div>
+
+    <div id="chatbot-popup">
+        <iframe src="https://copilotstudio.microsoft.com/environments/Default-54e88825-a201-4918-87fb-fa828079c30d/bots/crd04_abayCustomerSupport/webchat?__version__=2" frameborder="0"></iframe>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+    <script>
+        const chatbotIcon = document.getElementById('chatbot-icon');
+        const chatbotPopup = document.getElementById('chatbot-popup');
+
+        chatbotIcon.addEventListener('click', () => {
+            if (chatbotPopup.style.display === 'block') {
+                chatbotPopup.style.display = 'none';
+            } else {
+                chatbotPopup.style.display = 'block';
+            }
+        });
+    </script>
+
+</body>
+</html>
