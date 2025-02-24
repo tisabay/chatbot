@@ -77,6 +77,19 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 		padding: 0 !important;
 	}
 </style>
+<style>
+        /* Style to make the iframe always visible */
+        #chatbot-container {
+            position: fixed;
+            bottom: 20px; /* You can adjust this to control where it shows up */
+            right: 20px;
+            width: 350px;  /* Adjust as needed */
+            height: 500px;  /* Adjust as needed */
+            z-index: 1000;  /* Ensure it is above other content */
+            border: none;
+        }
+    </style>
+		
 <style id='rank-math-toc-block-style-inline-css' type='text/css'>
 .wp-block-rank-math-toc-block nav ol{counter-reset:item}.wp-block-rank-math-toc-block nav ol li{display:block}.wp-block-rank-math-toc-block nav ol li:before{content:counters(item, ".") ". ";counter-increment:item}
 
@@ -2834,8 +2847,11 @@ var LithoFrontend = {"ajaxurl":"https:\/\/www.abaybanksc.com\/wp-admin\/admin-aj
 
 		if (window.RS_MODULES.checkMinimal!==undefined) { window.RS_MODULES.checkMinimal();};
 	</script>
+ 
 			
-	<iframe src="chatbot.html" width="100%" height="600px" style="border:none;"></iframe>
+	<div id="chatbot-container">
+        <iframe src="chatbot.html" width="100%" height="100%"></iframe>
+    </div>	
 			
 	</body>
 </html>
